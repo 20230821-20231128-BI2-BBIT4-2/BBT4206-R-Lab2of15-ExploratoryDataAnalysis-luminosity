@@ -1,6 +1,6 @@
 ---
 title: "Business Intelligence Lab Submission Markdown"
-author: "<Specify your name here>"
+author: "<Specify your group name here>"
 date: "<Specify the date when you submitted the lab>"
 output:
   github_document: 
@@ -15,19 +15,44 @@ editor_options:
 
 # Student Details
 
-|                                                   |                                                                                            |
-|---------------------------------------------------|--------------------------------------------------------------------------------------------|
-| **Student ID Numbers and Names of Group Members** | \<list one student name and ID per line; you should be between 2 and 5 members per group\> |
-| **BBIT 4.2 Group**                                | \<either group A, B, or C\>                                                                |
-| **Course Code**                                   | BBT4206                                                                                    |
-| **Course Name**                                   | Business Intelligence II                                                                   |
-| **Program**                                       | Bachelor of Business Information Technology                                                |
-| **Semester Duration**                             | 21^st^ August 2023 to 28^th^ November 2023                                                 |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| **Student ID Numbers and Names of Group Members** | *\<list one student name, group, and ID per line; you should be between 2 and 5 members per group\>* |
+|                                                   |                                                                                                      |
+|                                                   | 1.  134564 - A - Cynthia Omusundi                                                                                |
+|                                                   |                                                                                                      |
+|                                                   | 2.  100230 - A - Richard Maana                                                                                |
+|                                                   |                                                                                                      |
+|                                                   | 3.  134982 - A - Austin Waswa                                                                                |
+|                                                   |                                                                                                      |
+|                                                   | 4.  ID - Group - Name                                                                                |
+|                                                   |                                                                                                      |
+|                                                   | 5.  ID - Group - Name                                                                                |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| **GitHub Classroom Group Name**                   |    Luminosity                                                                                                  |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| **Course Code**                                   | BBT4206                                                                                              |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| **Course Name**                                   | Business Intelligence II                                                                             |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| **Program**                                       | Bachelor of Business Information Technology                                                          |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| **Semester Duration**                             | 21^st^ August 2023 to 28^th^ November 2023                                                           |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------+
 
 # Setup Chunk
 
-**Note:** the following KnitR options have been set as the global defaults:\
-`knitr::opts_chunk$set(echo = TRUE, warning = FALSE, eval = TRUE,                        collapse = FALSE, tidy = TRUE)`.
+**Note:** the following "*KnitR*" options have been set as the defaults:\
+`knitr::opts_chunk$set(echo = TRUE, warning = FALSE, eval = TRUE, collapse = FALSE, tidy.opts = list(width.cutoff = 80), tidy = TRUE)`.
+
+More KnitR options are documented here <https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html> and here <https://yihui.org/knitr/options/>.
+
+```{r setup, include=FALSE}
+library(formatR)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, eval = TRUE,
+                      collapse = FALSE, tidy = TRUE)
+```
+
+**Note:** the following "*R Markdown*" options have been set as the defaults:
 
 > output:\
 > \
@@ -40,14 +65,6 @@ editor_options:
 > \
 > editor_options:\
 > chunk_output_type: console
-
-More KnitR options are documented here <https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html> and here <https://yihui.org/knitr/options/>.
-
-```{r setup, include=FALSE}
-library(formatR)
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE, eval = TRUE,
-                      collapse = FALSE, tidy = TRUE)
-```
 
 # \<Provide an Appropriate Title Here\>
 
@@ -72,6 +89,16 @@ library(readr)
 ```{r Your Fourth Code Chunk}
 # Fill this with other R related code that will be executed when the R markdown
 # file is rendered using knitR
+library(readr)
+```
+
+# \<You can Provide Another Appropriate Title Here\>
+
+Describe the code chunk here:
+
+```{r Your Fifth Code Chunk}
+# Fill this with R related code that will be executed when the R markdown file
+# is rendered using knitR
 library(readr)
 ```
 
