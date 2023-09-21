@@ -15,44 +15,71 @@ editor_options:
 
 # Student Details
 
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| **Student ID Numbers and Names of Group Members** | *\<list one student name, group, and ID per line; you should be between 2 and 5 members per group\>* |
-|                                                   |                                                                                                      |
-|                                                   | 1.  134564 - A - Cynthia Omusundi                                                                                |
-|                                                   |                                                                                                      |
-|                                                   | 2.  100230 - A - Richard Maana                                                                                |
-|                                                   |                                                                                                      |
-|                                                   | 3.  134982 - A - Austin Waswa                                                                                |
-|                                                   |                                                                                                      |
-|                                                   | 4.  ID - Group - Name                                                                                |
-|                                                   |                                                                                                      |
-|                                                   | 5.  ID - Group - Name                                                                                |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| **GitHub Classroom Group Name**                   |    Luminosity                                                                                                  |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| **Course Code**                                   | BBT4206                                                                                              |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| **Course Name**                                   | Business Intelligence II                                                                             |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| **Program**                                       | Bachelor of Business Information Technology                                                          |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| **Semester Duration**                             | 21^st^ August 2023 to 28^th^ November 2023                                                           |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Student ID Numbers and Names of Group Members** | *\<list one student name, class group (just the letter; A, B, or C), and ID per line, e.g., 123456 - A - John Leposo; you should be between 2 and 5 members per group\>* |
+|                                                   |                                                                                                                                                                          |
+|                                                   | 1.  134564 - A - Cynthia                                                                                                                                               |
+|                                                   |                                                                                                                                                                          |
+|                                                   | 2.  100230 - A - Richard                                                                                                                                              |
+|                                                   |                                                                                                                                                                          |
+|                                                   | 3.  134982 - A - Austin                                                                                                                                              
+|                                                   |                                                                                                                                                                          |
+|                                                   | 4.  ID - Class Group - Name                                                                                                                                              |
+|                                                   |                                                                                                                                                                          |
+|                                                   | 5.  ID - Class Group - Name                                                                                                                                              |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **GitHub Classroom Group Name**                   | Luminosity                                                                                                      
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Course Code**                                   | BBT4206                                                                                                                                                                  |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Course Name**                                   | Business Intelligence II                                                                                                                                                 |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Program**                                       | Bachelor of Business Information Technology                                                                                                                              |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Semester Duration**                             | 21^st^ August 2023 to 28^th^ November 2023                                                                                                                               |
++---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 # Setup Chunk
 
-**Note:** the following "*KnitR*" options have been set as the defaults:\
+We start by installing all the required packages
+
+```{r Install Packages, echo=TRUE, message=FALSE, warning=FALSE}
+## formatR - Required to format R code in the markdown ----
+if (!is.element("formatR", installed.packages()[, 1])) {
+  install.packages("formatR", dependencies = TRUE,
+                   repos="https://cloud.r-project.org")
+}
+require("formatR")
+
+
+## readr - Load datasets from CSV files ----
+if (!is.element("readr", installed.packages()[, 1])) {
+  install.packages("readr", dependencies = TRUE,
+                   repos="https://cloud.r-project.org")
+}
+require("readr")
+```
+
+------------------------------------------------------------------------
+
+**Note:** the following "*KnitR*" options have been set as the defaults in this markdown:\
 `knitr::opts_chunk$set(echo = TRUE, warning = FALSE, eval = TRUE, collapse = FALSE, tidy.opts = list(width.cutoff = 80), tidy = TRUE)`.
 
 More KnitR options are documented here <https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html> and here <https://yihui.org/knitr/options/>.
 
-```{r setup, include=FALSE}
-library(formatR)
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE, eval = TRUE,
-                      collapse = FALSE, tidy = TRUE)
+```{r setup, echo=TRUE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(
+	eval = TRUE,
+	echo = TRUE,
+	warning = FALSE,
+	collapse = FALSE,
+	tidy = TRUE
+)
 ```
 
-**Note:** the following "*R Markdown*" options have been set as the defaults:
+------------------------------------------------------------------------
+
+**Note:** the following "*R Markdown*" options have been set as the defaults in this markdown:
 
 > output:\
 > \
@@ -66,40 +93,46 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, eval = TRUE,
 > editor_options:\
 > chunk_output_type: console
 
-# \<Provide an Appropriate Title Here\>
+# Loading the Student Performance Dataset
 
-Describe the code chunk here:
+The 20230412-20230719-BI1-BBIT4-1-StudentPerformanceDataset is then loaded. The dataset and its metadata are available here: <https://drive.google.com/drive/folders/1-BGEhfOwquXF6KKXwcvrx7WuZXuqmW9q?usp=sharing>
 
-```{r Your Second Code Chunk}
-# Fill this with R related code that will be executed when the R markdown file
-# is rendered using knitR
-library(readr)
+```{r Load Dataset}
+
 ```
 
-Describe the next code chunk here:
+## Description of the Dataset
 
-```{r Your Third Code Chunk}
-# Fill this with other R related code that will be executed when the R markdown
-# file is rendered using knitR
-library(readr)
-```
-
-## \<You Can Have a Sub-Title Here\>
+We then display the number of observations and number of variables. We have 101 observations and 100 variables to work with.
 
 ```{r Your Fourth Code Chunk}
-# Fill this with other R related code that will be executed when the R markdown
-# file is rendered using knitR
-library(readr)
+
 ```
 
-# \<You can Provide Another Appropriate Title Here\>
+Next, we display the quartiles for each numeric variable[*... think of this process as **"storytelling using the data."** Tell us what is happening; tell us what you are discovering as you proceed with the markdown; walk us through your code step-by-step (a code walkthrough).*]{#highlight style="color: blue"}
+
+```{r Your Fifth Code Chunk}
+
+```
+
+# \<You can Provide Another Appropriate Title Here if you wish\>
 
 Describe the code chunk here:
 
-```{r Your Fifth Code Chunk}
+```{r Your Sixth Code Chunk}
 # Fill this with R related code that will be executed when the R markdown file
-# is rendered using knitR
-library(readr)
 ```
 
-**etc.** as per the lab submission requirements.
+## \<You Can Have a Sub-Title Here if you wish\>
+
+```{r Your Seventh Code Chunk}
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+## \<You Can Have Another Sub-Title Here if you wish\>
+
+```{r Your Eighth Code Chunk}
+# Fill this with other R related code that will be executed when the R markdown
+```
+
+**etc.** as per the lab submission requirements. Be neat and communicate in a clear and logical manner.
