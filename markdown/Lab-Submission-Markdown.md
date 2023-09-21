@@ -29,16 +29,16 @@ Business Intelligence Lab Submission Markdown
 B, or C), and ID per line, e.g., 123456 - A - John Leposo; you should be
 between 2 and 5 members per group&gt;</em></p>
 <ol type="1">
-<li><p>134564 - A - Cynthia |</p></li>
-<li><p>100230 - A - Richard |</p></li>
-<li><p>134982 - A - Austin |</p></li>
+<li><p>134564 - A - Cynthia </p></li>
+<li><p>100230 - A - Richard </p></li>
+<li><p>134982 - A - Austin </p></li>
 <li><p>ID - Class Group - Name</p></li>
 <li><p>ID - Class Group - Name</p></li>
 </ol></td>
 </tr>
 <tr class="even">
 <td><strong>GitHub Classroom Group Name</strong></td>
-<td>Luminosity |</td>
+<td>Luminosity </td>
 </tr>
 <tr class="odd">
 <td><strong>Course Code</strong></td>
