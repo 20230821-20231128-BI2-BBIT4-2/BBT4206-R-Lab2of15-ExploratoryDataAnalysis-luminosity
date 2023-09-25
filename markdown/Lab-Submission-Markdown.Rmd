@@ -256,19 +256,29 @@ summary(student_performance_dataset)
 Describe the code chunk here:
 
 ```{r Your Sixth Code Chunk}
-# Fill this with R related code that will be executed when the R markdown file
+
+student_performance_dataset_freq <- student_performance_dataset$GRADE 
+cbind(frequency = table(student_performance_dataset_freq),
+      percentage = prop.table(table(student_performance_dataset_freq)) * 100)
 ```
 
 ## \<You Can Have a Sub-Title Here if you wish\>
 
 ```{r Your Seventh Code Chunk}
-# Fill this with other R related code that will be executed when the R markdown
+sapply(student_performance_dataset,class)
 ```
 
 ## \<You Can Have Another Sub-Title Here if you wish\>
 
 ```{r Your Eighth Code Chunk}
-# Fill this with other R related code that will be executed when the R markdown
+student_performance_dataset_GRADE_mode <- names(table(student_performance_dataset$GRADE))
+  which(table(student_performance_dataset$GRADE) == max(table(student_performance_dataset$GRADE)))
 ```
+
+```{r Your Ninth Code Chunk}
+
+sapply(student_performance_dataset[, c(97, 96, 99)], sd)
+```
+
 
 **etc.** as per the lab submission requirements. Be neat and communicate in a clear and logical manner.
